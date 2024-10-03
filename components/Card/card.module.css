@@ -1,0 +1,99 @@
+.card__wrapper {
+    position: relative;
+    width: 270px;
+    height: 320px;
+}
+
+.card__link {
+    text-decoration: none;
+    display: block;
+}
+
+.card {
+    position: relative;
+    left: 20px;
+    top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+
+    width: 250px;
+    height: 300px;
+    padding: 10px;
+
+    border-radius: var(--mantine-radius-default);
+    border: 1px solid var(--mantine-color-blue-5);
+
+    background-color: var(--mantine-color-gray-9);
+    transition: 0.2s ease-in-out;
+}
+
+
+
+@media (hover: hover) and (pointer: fine) {
+    .card__wrapper:hover .card {
+        left: 0;
+        top: 0;
+    }
+}
+
+.card__shadow {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+
+    width: 250px;
+    height: 300px;
+
+    border-radius: var(--mantine-radius-default);
+    border: 1px dashed var(--mantine-color-green-5);
+}
+
+.card__shadow_past {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+
+    width: 250px;
+    height: 300px;
+
+    border-radius: var(--mantine-radius-default);
+    border: 1px dashed var(--mantine-color-red-7);
+}
+
+.card__title {
+    color: white;
+    font-size: var(--mantine-font-size-lg);
+    margin: 0 auto;
+
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 100%;
+    max-height: 50%;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.card__description {
+    color: white;
+    font-size: var(--mantine-font-size-xs);
+    margin: 0;
+
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 100%;
+    max-height: 50%;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

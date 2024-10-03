@@ -1,12 +1,24 @@
 import '@mantine/core/styles.css';
+import "./style.css";
 
 import React from 'react';
+import {ColorSchemeScript, createTheme, DEFAULT_THEME, MantineProvider} from "@mantine/core";
+import {NeuropolMedium} from "@/fonts/NeuropolMedium/NeuropolMedium";
 
-export default function RootLayout({children}: { children: any }) {
+const theme = createTheme({
+    fontFamily: NeuropolMedium.style.fontFamily,
+    fontFamilyMonospace: 'Monaco, Courier, monospace',
+    headings: {
+        fontFamily: `${NeuropolMedium.style.fontFamily}, ${DEFAULT_THEME.fontFamily}`,
+    },
+    autoContrast: true
+});
+
+export const RootLayout: React.FC<{ children: React.ReactNode | React.ReactNode[] | null | undefined }> = ({children}) => {
     return (
-        <html lang="en">
+        <html lang="ru">
         <head>
-            <ColorSchemeScript/>
+            <ColorSchemeScript />
             <link rel="shortcut icon" href="/favicon.svg"/>
             <meta
                 name="viewport"
@@ -14,8 +26,8 @@ export default function RootLayout({children}: { children: any }) {
             />
         </head>
         <body>
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider theme={theme}>{children}</MantineProvider>
         </body>
         </html>
     );
-}
+};
